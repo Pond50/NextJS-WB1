@@ -1,4 +1,4 @@
-import { Band } from "@/app/data/bands";
+import type {Band} from "/Users/Treethossaphon/Nextjs/next-course-hub/app/types/types.ts";
 import Image from "next/image";
 
 export default function BandCard({ band }: { band: Band }) {
