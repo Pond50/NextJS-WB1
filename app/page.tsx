@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+
 export default function HomePage() { 
   const siteName: string = "Student Course Hub"; 
   const courseCount: number = 3; 
@@ -14,6 +15,7 @@ export default function HomePage() {
 
   return ( 
     <main> 
+      
       <h1>{siteName}</h1> 
       <p>จำนวนรายวิชา: {courseCount}</p> 
       <p>สถานะระบบ: {isOpen ? "เปิดใช้งาน" : "ปิดใช้งาน"}</p> 

@@ -1,68 +1,26 @@
-
+"use client";
+import ButtonComponents from "@/app/components/ButtonComponents";
+import CounterDemo from "@/app/components/CounterDemo";
+import { courses } from "@/app/data/courses";
+import CourseExplorer from "@/app/components/CourseExplorer";
 
 export default function CoursesPage() {
-    type Course = { 
-    id: number; 
-    code: string; 
-    title: string; 
-    credits: number; 
-    isOpen: boolean; 
-  }; 
- 
-  const courses: Course[] = [ 
-    { 
-      id: 1, 
-      code: "10301231", 
-      title: "Web Technology", 
-      credits: 3, 
-      isOpen: true, 
-    },
+  return (
+    <div className="min-h-screen bg-gray-50 p-8">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold mb-8 text-gray-800">รายวิชา</h1>
 
-    { 
-      id: 2, 
-      code: "10301232", 
-      title: "Database Systems", 
-      credits: 3, 
-      isOpen: false, 
-    },
+        <div className="mb-8">
+          <ButtonComponents /><br /><br />
+          <CounterDemo />
+        </div>
 
-    {
-      id: 3,
-      code: "10301222",
-      title: "Algrolitem",
-      credits: 3,
-      isOpen: true,
-    },
-
-    {
-      id: 4,
-      code: "10301211",
-      title: "DiscretMath",
-      credits: 3,
-      isOpen: false,
-    },
-
-    {
-      id: 5,
-      code: "10301225",
-      title: "SoftwereEngineer",
-      credits: 2,
-      isOpen: false,
-    },
-  ]; 
-        return (
-            <div>
-                {courses.map((course, index) => (
-                    <article key={course.id}>
-                        <h2>{index+1}.{course.title}</h2>
-                        <p>รหัสวิชา: {course.code}</p>
-                        <p>{course.credits} หน่วยกิต</p>
-                        <p>{course.isOpen ? "เปิดลงทะเบียน" : "ปิดลงทะเบียน"}</p>
-                    </article>
-                    ))}
-            </div>
-        );
-
-
-
-    }
+        {/* ส่วนค้นหาและฟิลเตอร์ */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold mb-6 text-gray-800">ค้นหารายวิชา</h2>
+          <CourseExplorer courses={courses}/>
+        </div>
+      </div>
+    </div>
+  );
+}
